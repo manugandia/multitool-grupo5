@@ -1,8 +1,13 @@
 import java.util.Scanner;
 
 public class gestor_tareas {
+    static int count = 0;
+    static int Max = 15;
+    static String[]tareas = new String[Max];
+    static Scanner leer = new Scanner(System.in);
     public static void main(String[] args) {
         iniciar_aplicacion();
+        
     }
     public static void iniciar_aplicacion(){
         int opcion;
@@ -19,7 +24,7 @@ public class gestor_tareas {
                     Listar_tareas();
                     break;
                 case 3:
-                    Buscar_Palabra();
+                    buscarPorNombreUI();
                     break;
                 case 0:
                     System.out.println("Saliendo del menú");
@@ -33,7 +38,7 @@ public class gestor_tareas {
         
     }
     public static int mostrarMenu(){
-        Scanner leer = new Scanner(System.in);
+        
         System.out.println("GESTOR DE TAREAS");
         System.out.println("Submenu:");
         System.out.println("1.añadir tarea");
@@ -44,14 +49,62 @@ public class gestor_tareas {
         int opcion = leer.nextInt();
         return opcion;
     }
-    public static void Añadir_Tarea(){
+    public static boolean Añadir_Tarea(){
+        if (count <= Max) {
+            return false;
+        }    
+        System.out.println("Escribe la tarea: ");
+        String añadir = leer.next();
+        tareas[count] = añadir;
+        return true;
+        }
+    
+    static void anadirContactoUI() {
+        System.out.println("\n--- Añadir contacto ---");
+        String nombre = pedirCadenaNoVacia( "Nombre: ");
+        String email = pedirCadenaNoVacia("Email (opcional): ");
+        Añadir_Tarea();
+        if (Añadir_Tarea()) {
+            System.out.println("Añadido exitosamente");
+        }else{
+            System.out.println("Accion no completada");
+        }
+    }    
 
-    }
     public static void Listar_tareas(){
-
+        for(int i = 0; i < count; i++ ){
+            System.out.println(tareas[i]);
+        }
     }
-    public static void Buscar_Palabra(){
+    
+    
+    static void buscarPorNombreUI() {
+        System.out.println("\n--- Buscar contacto ---");
+        String patron = pedirCadenaNoVacia("Introduce parte del nombre: ");
 
+        // Llamará a métodos de búsqueda (lógica)
+        Buscar_Palabra(patron);
+    }
+    
+    
+    static String pedirCadenaNoVacia(String mensaje) {
+        do{
+            System.out.println("Escribe...");
+            mensaje = leer.nextLine();
+            System.out.print(mensaje);
+            return mensaje;
+        }
+        while(mensaje.equals("") );
+    }
+    
+    
+    
+        public static void Buscar_Palabra(String patron){
+        for(int i =0; i < count; i++){
+            if (tareas[i].contains(patron)) {
+                System.out.println(tareas[i]); 
+            }
+        }
     }
 
 }
