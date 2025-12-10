@@ -2,7 +2,7 @@ Practica grupal GIT
 
 
 Creamos el repositorio Multitool-Grupo-5 .
-imagenes/Imagen1.png
+!(imagen)[imagenes/Imagen1.png]
  
 Creamos las ramas main y dev para subir los archivos.
 
