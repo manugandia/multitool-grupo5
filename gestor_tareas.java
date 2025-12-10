@@ -24,7 +24,7 @@ public class gestor_tareas {
                     Listar_tareas();
                     break;
                 case 3:
-                    buscarPorNombreUI();
+                    Buscar_Palabra(null);();
                     break;
                 case 0:
                     System.out.println("Saliendo del menú");
@@ -49,56 +49,24 @@ public class gestor_tareas {
         int opcion = leer.nextInt();
         return opcion;
     }
-    public static boolean Añadir_Tarea(){
-        if (count <= Max) {
-            return false;
-        }    
+    public static void Añadir_Tarea(){
+        if (count >= Max) {
+            System.out.println("No se pueden añadir mas contactos");
+        }
+        do{
         System.out.println("Escribe la tarea: ");
         String añadir = leer.next();
         tareas[count] = añadir;
-        return true;
+        count ++;
         }
+        while(count >= Max);
+    }
     
-    static void anadirContactoUI() {
-        System.out.println("\n--- Añadir contacto ---");
-        String nombre = pedirCadenaNoVacia( "Nombre: ");
-        String email = pedirCadenaNoVacia("Email (opcional): ");
-        Añadir_Tarea();
-        if (Añadir_Tarea()) {
-            System.out.println("Añadido exitosamente");
-        }else{
-            System.out.println("Accion no completada");
-        }
-    }    
-
     public static void Listar_tareas(){
         for(int i = 0; i < count; i++ ){
             System.out.println(tareas[i]);
         }
     }
-    
-    
-    static void buscarPorNombreUI() {
-        System.out.println("\n--- Buscar contacto ---");
-        String patron = pedirCadenaNoVacia("Introduce parte del nombre: ");
-
-        // Llamará a métodos de búsqueda (lógica)
-        Buscar_Palabra(patron);
-    }
-    
-    
-    static String pedirCadenaNoVacia(String mensaje) {
-        do{
-            System.out.println("Escribe...");
-            mensaje = leer.nextLine();
-            System.out.print(mensaje);
-            return mensaje;
-        }
-        while(mensaje.equals("") );
-    }
-    
-    
-    
         public static void Buscar_Palabra(String patron){
         for(int i =0; i < count; i++){
             if (tareas[i].contains(patron)) {
