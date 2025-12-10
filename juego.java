@@ -16,13 +16,23 @@ public class juego {
 
             switch (opcion) {
                 case 1:
-                    
+                    juegodenumeros();
                     break;
-            
+                case 2:
+                    mostrarnumerodeintentos();
+                    break;
+                case 0:
+                    break;
                 default:
-                    break;
+                    System.out.println("Opción no válida.");
             }
+            System.out.println("\nPulsa ENTER para continuar...");
+            r.nextLine();
         }
+          while (opcion != 0);
+
+           
+                
 
       }
 
@@ -49,6 +59,20 @@ public class juego {
         System.out.println("Escriba un número:");
         int numusu = r.nextInt();
         return numusu;
+      }
+
+      public static int juegodenumeros(){
+        int i = 0;
+        do{
+            pedirnumeroausuario();
+            i ++;
+        }
+        while(pedirnumeroausuario() != numerorandom());
+        return i;
+      }
+
+      public static void mostrarnumerodeintentos(){
+        System.out.println(juegodenumeros());
       }
 
       
