@@ -2,7 +2,7 @@ Practica grupal GIT
 
 
 Creamos el repositorio Multitool-Grupo-5 .
-!(imagen)[https://github.com/manugandia/multitool-grupo5/blob/ConversorMultiplo.-MarcosSospedra/imagenes/Imagen1.png]
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/ConversorMultiplo.-MarcosSospedra/imagenes/Imagen1.png)
  
 Creamos las ramas main y dev para subir los archivos.
 
