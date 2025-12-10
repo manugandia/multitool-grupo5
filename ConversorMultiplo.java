@@ -27,7 +27,7 @@ public class ConversorMultiplo{
                     kgLibras(sc);
                     break;
                 case 0:
-                    System.out.println("Volviendo al menú principal...");
+                    System.out.println("Volviendo al menú principal");
                     break;
                 default:
                     System.out.println("Opción inválida.");
@@ -86,7 +86,7 @@ public class ConversorMultiplo{
             double resultado = valor / 2.20462;
             System.out.println(valor + " lb = " + resultado + " kg");
         } else {
-            System.out.println("Opción inválida.");
+            System.out.println("Opción no valida.");
         }
     }
 }
