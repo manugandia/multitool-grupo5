@@ -6,7 +6,7 @@ public class ConversorMultiplo{
     
         Scanner sc = new Scanner(System.in);
         int opcion;
-
+// MENU
         do {
             System.out.println("--- Submenú de Conversiones ---");
             System.out.println("1. Celsius ↔ Fahrenheit");
@@ -35,7 +35,8 @@ public class ConversorMultiplo{
 
         } while (opcion != 0);
     }
-
+// METODOS
+    //TEMPERATURA 
     public static void celsiusFahrenheit(Scanner sc) {
         System.out.print("Ingrese la temperatura: ");
         double temp = sc.nextDouble();
@@ -53,7 +54,7 @@ public class ConversorMultiplo{
             System.out.println("Opción inválida.");
         }
     }
-
+// LONGITUD
     public static void metrosPies(Scanner sc) {
         System.out.print("Ingrese la longitud: ");
         double valor = sc.nextDouble();
@@ -71,7 +72,7 @@ public class ConversorMultiplo{
             System.out.println("Opción inválida.");
         }
     }
-
+// PESO
     public static void kgLibras(Scanner sc) {
         System.out.print("Ingrese el peso: ");
         double valor = sc.nextDouble();
