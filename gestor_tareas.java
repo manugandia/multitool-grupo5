@@ -68,10 +68,24 @@ public class gestor_tareas {
         }
     }
         public static void Buscar_Palabra(String patron){
-        for(int i =0; i < count; i++){
+        if (count ==0) {
+            System.out.println("No hay tareas para buscar");
+            return;
+        }
+
+        System.out.println("Introduce la palabra a buscar: ");
+        patron = leer.nextLine();
+        boolean esta = false;
+
+        for(int i =0; i<count; i++){
             if (tareas[i].contains(patron)) {
-                System.out.println(tareas[i]); 
+                System.out.println(tareas[i]);
+                esta = true;
             }
+        }
+
+        if(!esta){
+            System.out.println("No se ha encontrado la palabra entre las tareas");
         }
     }
 
