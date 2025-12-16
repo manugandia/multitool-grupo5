@@ -24,7 +24,7 @@ public class gestor_tareas {
                     Listar_tareas();
                     break;
                 case 3:
-                    Buscar_Palabra(null);();
+                    Buscar_Palabra(null);
                     break;
                 case 0:
                     System.out.println("Saliendo del menú");
