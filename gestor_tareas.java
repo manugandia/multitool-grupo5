@@ -51,15 +51,16 @@ public class gestor_tareas {
     }
     public static void Añadir_Tarea(){
         if (count >= Max) {
-            System.out.println("No se pueden añadir mas contactos");
+            System.out.println("No se pueden añadir mas tareas");
+            return;
         }
-        do{
+        
         System.out.println("Escribe la tarea: ");
         String añadir = leer.next();
         tareas[count] = añadir;
         count ++;
-        }
-        while(count >= Max);
+        
+        System.out.println("Tarea añadida correctamente");
     }
     
     public static void Listar_tareas(){
