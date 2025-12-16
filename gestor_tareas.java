@@ -24,7 +24,7 @@ public class gestor_tareas {
                     Listar_tareas();
                     break;
                 case 3:
-                    Buscar_Palabra(null);
+                    Buscar_Palabra();
                     break;
                 case 0:
                     System.out.println("Saliendo del menú");
@@ -47,6 +47,7 @@ public class gestor_tareas {
         System.out.println("0.Volver");
         System.out.println("Elige una opción: ");
         int opcion = leer.nextInt();
+        leer.nextLine();
         return opcion;
     }
     public static void Añadir_Tarea(){
@@ -56,7 +57,7 @@ public class gestor_tareas {
         }
         
         System.out.println("Escribe la tarea: ");
-        String añadir = leer.next();
+        String añadir = leer.nextLine();
         tareas[count] = añadir;
         count ++;
         
@@ -64,18 +65,21 @@ public class gestor_tareas {
     }
     
     public static void Listar_tareas(){
+        if (count == 0) {
+            System.out.println("No hay tareas registradas");
+        }
         for(int i = 0; i < count; i++ ){
-            System.out.println(tareas[i]);
+            System.out.println((i + 1) + "." + tareas[i]);
         }
     }
-        public static void Buscar_Palabra(String patron){
+        public static void Buscar_Palabra(){
         if (count ==0) {
             System.out.println("No hay tareas para buscar");
             return;
         }
 
         System.out.println("Introduce la palabra a buscar: ");
-        patron = leer.nextLine();
+        String patron = leer.nextLine();
         boolean esta = false;
 
         for(int i =0; i<count; i++){
