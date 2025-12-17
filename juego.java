@@ -2,9 +2,11 @@ import java.util.Scanner;
 
 public class juego {
     static Scanner r = new Scanner(System.in);
+    static int intentosUltimoJuego = 0;
+
     public static void main(String[] args) {
-        int NR = numerorandom();
-        int NU = pedirnumeroausuario();
+        iniciar_aplicacion();
+
 
 
       
@@ -36,17 +38,27 @@ public class juego {
 
       }
 
-      static int mostrarMenuYLeerOpcion(){
-        System.out.println("=== Submenú ===");
-        System.out.println("1.Jugar (número entre 1 y 50)");
-        System.out.println("2. Mostrar intentos del último juego");
-        System.out.println("0. Volver");
-        System.out.print("Elige una opción: ");
-        int opcion = r.nextInt();
-        r.nextLine();
-        return opcion;
+      static int mostrarMenuYLeerOpcion() {
+    int opcion;
 
-      }
+    System.out.println("=== Submenú ===");
+    System.out.println("1. Jugar (número entre 1 y 50)");
+    System.out.println("2. Mostrar intentos del último juego");
+    System.out.println("0. Volver");
+    System.out.print("Elige una opción: ");
+
+    while (!r.hasNextInt()) {   
+        System.out.println("Error: Escribe solo numeros, espabila.");
+        r.next();                 
+        System.out.print("Elige una opción: ");
+    }
+
+    opcion = r.nextInt();
+    r.nextLine();
+
+    return opcion;
+}
+
 
 
       public static int numerorandom(){
@@ -56,27 +68,43 @@ public class juego {
 
         
       public static int pedirnumeroausuario(){
-        System.out.println("Escriba un número:");
+        System.out.println("Escriba un número entre 1-50 y aciertalo:");
         int numusu = r.nextInt();
         return numusu;
       }
 
-      public static int juegodenumeros(){
-        int i = 0;
-        do{
-            pedirnumeroausuario();
-            i ++;
-        }
-        while(pedirnumeroausuario() != numerorandom());
-        return i;
-      }
+      public static void juegodenumeros() {
+    int numeroSecreto = numerorandom(); // SOLO UNA VEZ
+    int numUsuario;
+    intentosUltimoJuego = 0;
 
-      public static void mostrarnumerodeintentos(){
-        System.out.println(juegodenumeros());
-      }
+    do {
+        numUsuario = pedirnumeroausuario();
+        intentosUltimoJuego++;
+    } while (numUsuario != numeroSecreto);
+
+    System.out.println("Has acertado el numero correcto");
+}
+
+
+      public static void mostrarnumerodeintentos() {
+    if (intentosUltimoJuego == 0) {
+        System.out.println(" ");
+        System.out.println("========================================");
+        System.out.println("Todavía no se ha jugado ninguna partida.");
+        System.out.println("========================================");
+        System.out.println(" ");
+    } else {
+        System.out.println(" ");
+        System.out.println("==========================");
+        System.out.println("Intentos del último juego: " + intentosUltimoJuego);
+        System.out.println("==========================");
+        System.out.println(" ");
+    }
+}
+
 
       
 
 
 }
-
