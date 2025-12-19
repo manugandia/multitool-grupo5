@@ -8,6 +8,10 @@ public class GestorNumeros {
     static int contador = 0;
     static Scanner t = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        mostrarMenuGestor();
+    }
+
     public static void mostrarMenuGestor() { 
         int opcion;
         do {
