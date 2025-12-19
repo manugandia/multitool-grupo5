@@ -39,6 +39,45 @@ En mi caso (Marcos Sospedra) tenia que hacer Conversion de multiplos
 3. Kg ↔ Libras
 0. Volver
 
+Hector Galdez:
+
+GESTIÓN DE TAREAS
+Submenú:
+1. Añadir tarea
+2. Listar tareas
+3. Buscar palabra
+0. Volve
+
+Manuel Gandia:
+
+1. GESTOR DE NÚMEROS
+Submenú:
+1. Añadir número
+2. Listar números
+3. Ver mínimo y máximo
+4. Buscar número
+0. Volver
+
+Nacho Lucena:
+
+5. ADIVINA EL NÚMERO
+Submenú:
+1. Jugar (número entre 1 y 50)
+2. Mostrar intentos del último juego
+0. Volver
+ El programa genera un número aleatorio (1–50).
+ El usuario va probando hasta acertar
+Se guarda el número de intentos del último juego.
+
+Jose Ruiz:
+
+3. ANALIZADOR DE TEXTO
+Submenú:
+1. Contar vocales
+2. Contar palabras
+3. Palabra más larga
+0. Volver
+
 ![imagen](https://github.com/manugandia/multitool-grupo5/blob/ConversorMultiplo.-MarcosSospedra/imagenes/Imagen7.png)
 
  
@@ -51,5 +90,57 @@ Nos saldra un mensaje como este para hacer el commit y subirlo al repositorio re
 
 ![imagen](https://github.com/manugandia/multitool-grupo5/blob/ConversorMultiplo.-MarcosSospedra/imagenes/Imagen9.png)
 
+Pasamos todos los archivos a la rama dev de nuestro github
 
-c
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/ConversorMultiplo.-MarcosSospedra/imagenes/Screenshot_20251219_120632.png)
+
+
+
+
+ISSUES PERSONALES DE CADA UNO(TERMINADO)
+
+MARCOS SOSPEDRA
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/imagenes10.png)
+
+MANUEL GANDIA
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/issueManuel.png)
+
+HECTOR GALDEZ
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/hector%20ISSUE.png)
+
+JOSE RUIZ
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/issueJose.png)
+
+NACHO LUCENA
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/Nacho%20ISSUE.png)
+
+
+
+HISTORIAL DE COMMITS:
+MARCOS SOSPEDRA:
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/COMMITMARCOS.png)
+
+MANUEL GANDIA
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/coomitYramaManuel.png)
+
+JOSE RUIZ
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/commitsYramaJose.png)
+
+HECTOR GALDEZ
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/HectorCommits.png)
+
+NACHO LUCENA
+
+![imagen](https://github.com/manugandia/multitool-grupo5/blob/dev/imagenes/NachoCOmmits.png)
+
+
+
