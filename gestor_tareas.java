@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+public class gestor_tareas {
+    static int count = 0;
+    static int Max = 15;
+    static String[]tareas = new String[Max];
+    static Scanner leer = new Scanner(System.in);
+    public static void main(String[] args) {
+        iniciar_aplicacion();
+        
+    }
+    public static void iniciar_aplicacion(){
+        int opcion;
+        do{
+            opcion=mostrarMenu();
+        
+
+            switch (opcion) {
+                case 1:
+                    Añadir_Tarea();
+                    break;
+        
+                case 2:
+                    Listar_tareas();
+                    break;
+                case 3:
+                    Buscar_Palabra();
+                    break;
+                case 0:
+                    System.out.println("Saliendo del menú");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+            }
+            System.out.println("Pulsa ENTER para continuar...");
+            
+        }while (opcion !=0);
+        
+    }
+    public static int mostrarMenu(){
+        
+        System.out.println("GESTOR DE TAREAS");
+        System.out.println("Submenu:");
+        System.out.println("1.añadir tarea");
+        System.out.println("2.Listar tareas");
+        System.out.println("3.Buscar palabra");
+        System.out.println("0.Volver");
+        System.out.println("Elige una opción: ");
+        int opcion = leer.nextInt();
+        leer.nextLine();
+        return opcion;
+    }
+    public static void Añadir_Tarea(){
+        if (count >= Max) {
+            System.out.println("No se pueden añadir mas tareas");
+            return;
+        }
+        
+        System.out.println("Escribe la tarea: ");
+        String añadir = leer.nextLine();
+        tareas[count] = añadir;
+        count ++;
+        
+        System.out.println("Tarea añadida correctamente");
+    }
+    
+    public static void Listar_tareas(){
+        if (count == 0) {
+            System.out.println("No hay tareas registradas");
+        }
+        for(int i = 0; i < count; i++ ){
+            System.out.println((i + 1) + "." + tareas[i]);
+        }
+    }
+        public static void Buscar_Palabra(){
+        if (count ==0) {
+            System.out.println("No hay tareas para buscar");
+            return;
+        }
+
+        System.out.println("Introduce la palabra a buscar: ");
+        String patron = leer.nextLine();
+        boolean esta = false;
+
+        for(int i =0; i<count; i++){
+            if (tareas[i].contains(patron)) {
+                System.out.println(tareas[i]);
+                esta = true;
+            }
+        }
+
+        if(!esta){
+            System.out.println("No se ha encontrado la palabra entre las tareas");
+        }
+    }
+
+}
