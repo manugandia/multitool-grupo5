@@ -13,6 +13,7 @@ public class texto {
         Scanner sc = new Scanner(System.in);
         int opcion = -1;
         String texto = "";
+        sc.close();
 
 //Introduzco texto
         System.out.println("ANALIZADOR DE TEXTO");
@@ -101,4 +102,4 @@ public class texto {
         } while (opcion != 0);
         }
     }
-}    
+
